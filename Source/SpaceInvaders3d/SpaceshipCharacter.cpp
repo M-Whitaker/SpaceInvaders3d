@@ -3,6 +3,7 @@
 
 #include "SpaceshipCharacter.h"
 #include "Engine/World.h"
+#include "Engine.h"
 #include "AsteroidActor.h"
 
 // Sets default values
@@ -61,6 +62,7 @@ FHitResult ASpaceshipCharacter::InstantShot()
 	FCollisionQueryParams traceParams(SCENE_QUERY_STAT(instantShot), true);
 	FHitResult hit(ForceInit);
 	GetWorld()->LineTraceSingleByChannel(hit, rayLocation, endTrace, ECC_Visibility, traceParams);
+	DrawDebugLine(GetWorld(), rayLocation, endTrace, FColor(255, 0, 0));
 
 	return hit;
 }

@@ -21,6 +21,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Attack")
 		bool isAttackable{ true };
 
+	UPROPERTY(EditAnywhere, Category = "Attack")
+		float health{ 100 };
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

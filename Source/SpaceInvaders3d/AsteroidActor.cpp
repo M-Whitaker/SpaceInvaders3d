@@ -28,6 +28,11 @@ void AAsteroidActor::Tick(float DeltaTime)
 // Perform heath reduction logic
 void AAsteroidActor::TakeAttack()
 {
-	OnTakeAttack();
+	//TODO: Implement a health subtraction of 25 each time? This could eventually be moved to depending on the bullet fired...
+	health -= 25;
+	if (health <= 0)
+	{
+		OnTakeAttack();
+	}
 }
 
