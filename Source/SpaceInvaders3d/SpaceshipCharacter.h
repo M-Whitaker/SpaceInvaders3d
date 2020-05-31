@@ -21,10 +21,20 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void FireWeapon();
 
+	UFUNCTION(BlueprintPure, Category = "Score")
+		int GetScore();
+
+	UFUNCTION(BlueprintCallable, Category = "Score")
+		void SetScore(int score);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
 	FHitResult InstantShot();
+
+	UPROPERTY(EditAnywhere, Category = "Score")
+		int currentScore{ 0 };
 
 public:	
 	// Called every frame

@@ -45,6 +45,16 @@ void ASpaceshipCharacter::FireWeapon()
 	}
 }
 
+int ASpaceshipCharacter::GetScore()
+{
+	return currentScore;
+}
+
+void ASpaceshipCharacter::SetScore(int score)
+{
+	currentScore = score;
+}
+
 // InstantShot
 FHitResult ASpaceshipCharacter::InstantShot()
 {
